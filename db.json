@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": "ac64",
+      "username": "aqsa",
+      "email": "aqsazaheer7636@gmail.com",
+      "password": "$2a$10$TSfus7ELNedZDOAfA4CjketKiPfqSCXWseIKk1cGEhZV9Fe.Y0s8K"
+    },
+    {
+      "id": "21f7",
+      "username": "kainat",
+      "email": "kainat@gmail.com",
+      "password": "$2a$10$vKOgvaEkzmATptzKe479oe8xHwhsSEnNGbboK9rG54ECFNubOG7he"
+    }
+  ]
+}
