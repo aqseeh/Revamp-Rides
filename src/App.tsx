@@ -1,4 +1,3 @@
-import "./App.css";
 import AppRoutes from "./approutes";
 import { Toaster } from "react-hot-toast";
 
