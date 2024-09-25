@@ -5,6 +5,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AuthRequired from "./auth";
 import Home from "@/pages/home";
 import Cars from "@/pages/car";
+import AboutUs from "@/pages/about-us";
+import ContactUs from "@/pages/contact";
 
 const AppRoutes = () => {
   return (
@@ -16,6 +18,8 @@ const AppRoutes = () => {
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/cars" element={<Cars />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact-us" element={<ContactUs />} />
           </Route>
         </Route>
       </Routes>

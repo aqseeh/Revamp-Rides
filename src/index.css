@@ -135,3 +135,15 @@ button:focus-visible {
     @apply bg-background text-foreground;
   }
 }
+
+.slick-next {
+  right: 25px;
+}
+
+.slick-prev {
+  left: 25px;
+  z-index: 99;
+}
+.slick-dots {
+  bottom: 25px;
+}
