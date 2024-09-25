@@ -4,7 +4,8 @@ import RegisterPage from "../pages/register";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AuthRequired from "./auth";
 import Home from "@/pages/home";
-import ReviewForm from "@/pages/reviews/reviewlist";
+import AboutUs from "@/pages/about-us";
+import ContactUs from "@/pages/contact";
 
 const AppRoutes = () => {
   return (
@@ -15,7 +16,8 @@ const AppRoutes = () => {
         <Route element={<AuthRequired />}>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/reviewlist" element={<ReviewForm />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact-us" element={<ContactUs />} />
           </Route>
         </Route>
       </Routes>
