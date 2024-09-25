@@ -19,22 +19,6 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-<<<<<<< HEAD
-    <div className="bg-black  h-16 w-full fixed top-0 z-50">
-      <div className="hidden md:flex space-x-6 justify-start items-center px-8 h-full">
-        <Link to="/" className=" text-black hover:text-yellow-500">
-          Home
-        </Link>
-        <Link to="/about" className="text-white hover:text-yellow-500">
-          About
-        </Link>
-        <Link to="/cars" className="text-white hover:text-yellow-500">
-          Cars
-        </Link>
-        <Link to="/services" className="text-white hover:text-yellow-500">
-          Services
-        </Link>
-=======
     <div className="container mx-auto fixed top-0 z-50 flex justify-between items-center">
       <div className="bg-transparent opacity-40 h-16 w-full">
         <div className="hidden md:flex space-x-6 justify-start items-center px-8 h-full">
@@ -42,7 +26,6 @@ const NavBar = () => {
           <Link to="/" className="text-white hover:text-slate-600">
             Home
           </Link>
->>>>>>> 842b8cdf9acc0dcec671cff9f8c08327ddeefbe1
 
           <Link
             to="/services"

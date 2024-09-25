@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import Modal from 'react-modal'; // Importing react-modal for popup
-import Slider from 'react-slick';
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Slider from "react-slick";
 
 // Interface for usage duration
 interface UsageDuration {
@@ -26,18 +25,17 @@ const Cars: React.FC = () => {
   const [cars, setCars] = useState<Car[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false); // State to handle modal open/close
   const [selectedCar, setSelectedCar] = useState<Car | null>(null); // State to hold the selected car for the modal
 
   // Fetch car data from the API
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        const response = await axios.get<Car[]>('http://localhost:4000/cars');
+        const response = await axios.get<Car[]>("http://localhost:4000/cars");
         setCars(response.data);
         setLoading(false);
       } catch {
-        setError('Error fetching car data');
+        setError("Error fetching car data");
         setLoading(false);
       }
     };
@@ -46,12 +44,18 @@ const Cars: React.FC = () => {
   }, []);
 
   // Custom next arrow component for the carousel in modal
-  const SampleNextArrow: React.FC<any> = (props) => {
+  const SampleNextArrow = (props: any) => {
     const { className, style, onClick } = props;
     return (
       <div
         className={`${className} custom-arrow`}
-        style={{ ...style, display: 'block', background: 'gray', borderRadius: '50%', cursor: 'pointer' }}
+        style={{
+          ...style,
+          display: "block",
+          background: "gray",
+          borderRadius: "50%",
+          cursor: "pointer",
+        }}
         onClick={onClick}
       >
         &gt;
@@ -60,12 +64,18 @@ const Cars: React.FC = () => {
   };
 
   // Custom previous arrow component for the carousel in modal
-  const SamplePrevArrow: React.FC<any> = (props) => {
+  const SamplePrevArrow = (props: any) => {
     const { className, style, onClick } = props;
     return (
       <div
         className={`${className} custom-arrow`}
-        style={{ ...style, display: 'block', background: 'gray', borderRadius: '50%', cursor: 'pointer' }}
+        style={{
+          ...style,
+          display: "block",
+          background: "gray",
+          borderRadius: "50%",
+          cursor: "pointer",
+        }}
         onClick={onClick}
       >
         &lt;
@@ -81,18 +91,16 @@ const Cars: React.FC = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    prevArrow: <SamplePrevArrow />,
   };
 
   // Handle opening the modal
   const openModal = (car: Car) => {
     setSelectedCar(car); // Set the selected car
-    setIsModalOpen(true); // Open the modal
   };
 
   // Handle closing the modal
   const closeModal = () => {
-    setIsModalOpen(false); // Close the modal
     setSelectedCar(null); // Reset the selected car
   };
 
@@ -131,15 +139,19 @@ const Cars: React.FC = () => {
               <h2 className="text-xl font-semibold">
                 {car.make} {car.model} ({car.year})
               </h2>
-              <p className="text-gray-600">Type: {car.carType === 'new' ? 'New Car' : 'Old Car'}</p>
+              <p className="text-gray-600">
+                Type: {car.carType === "new" ? "New Car" : "Old Car"}
+              </p>
               <p>
-                Usage Duration:{' '}
+                Usage Duration:{" "}
                 {car.usageDuration
                   ? `${car.usageDuration.years} years, ${car.usageDuration.months} months`
-                  : 'Not available'}
+                  : "Not available"}
               </p>
               <p>Mileage: {car.mileage} km</p>
-              <p className="text-lg font-bold text-green-600">Price: ${car.price}</p>
+              <p className="text-lg font-bold text-green-600">
+                Price: ${car.price}
+              </p>
             </div>
           ))
         )}
@@ -147,39 +159,41 @@ const Cars: React.FC = () => {
 
       {/* Modal for displaying car details */}
       {selectedCar && (
-        <Modal
-          isOpen={isModalOpen}
-          onRequestClose={closeModal}
-          contentLabel="Car Details"
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center"
-        >
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full">
-            <button onClick={closeModal} className="text-red-600 font-bold float-right">Close</button>
-            <Slider {...carouselSettings}>
-              {selectedCar.image.map((imgUrl, index) => (
-                <div key={index}>
-                  <img
-                    src={imgUrl}
-                    alt={`Car Image ${index + 1}`}
-                    className="w-full h-96 object-cover rounded-lg mb-4"
-                  />
-                </div>
-              ))}
-            </Slider>
-            <h2 className="text-2xl font-bold mt-4">
-              {selectedCar.make} {selectedCar.model} ({selectedCar.year})
-            </h2>
-            <p className="text-gray-600">Type: {selectedCar.carType === 'new' ? 'New Car' : 'Old Car'}</p>
-            <p>
-              Usage Duration:{' '}
-              {selectedCar.usageDuration
-                ? `${selectedCar.usageDuration.years} years, ${selectedCar.usageDuration.months} months`
-                : 'Not available'}
-            </p>
-            <p>Mileage: {selectedCar.mileage} km</p>
-            <p className="text-lg font-bold text-green-600">Price: ${selectedCar.price}</p>
-          </div>
-        </Modal>
+        <div className="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full">
+          <button
+            onClick={closeModal}
+            className="text-red-600 font-bold float-right"
+          >
+            Close
+          </button>
+          <Slider {...carouselSettings}>
+            {selectedCar.image.map((imgUrl, index) => (
+              <div key={index}>
+                <img
+                  src={imgUrl}
+                  alt={`Car Image ${index + 1}`}
+                  className="w-full h-96 object-cover rounded-lg mb-4"
+                />
+              </div>
+            ))}
+          </Slider>
+          <h2 className="text-2xl font-bold mt-4">
+            {selectedCar.make} {selectedCar.model} ({selectedCar.year})
+          </h2>
+          <p className="text-gray-600">
+            Type: {selectedCar.carType === "new" ? "New Car" : "Old Car"}
+          </p>
+          <p>
+            Usage Duration:{" "}
+            {selectedCar.usageDuration
+              ? `${selectedCar.usageDuration.years} years, ${selectedCar.usageDuration.months} months`
+              : "Not available"}
+          </p>
+          <p>Mileage: {selectedCar.mileage} km</p>
+          <p className="text-lg font-bold text-green-600">
+            Price: ${selectedCar.price}
+          </p>
+        </div>
       )}
     </div>
   );
