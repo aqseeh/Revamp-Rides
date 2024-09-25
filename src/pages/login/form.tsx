@@ -17,7 +17,6 @@ import * as bcrypt from "bcryptjs";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { USER } from "@/user/user";
-
 const formSchema = z.object({
   email: z.string().email().min(1, {
     message: "Email is required",
@@ -26,7 +25,6 @@ const formSchema = z.object({
     message: "Password must be at least 6 characters.",
   }),
 });
-
 const UserAuthForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();

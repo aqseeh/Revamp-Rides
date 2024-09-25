@@ -12,5 +12,56 @@
       "email": "kainat@gmail.com",
       "password": "$2a$10$vKOgvaEkzmATptzKe479oe8xHwhsSEnNGbboK9rG54ECFNubOG7he"
     }
-  ]
+  ],
+    "cars": [
+      {
+        "id": 1,
+        "make": "Toyota",
+        "model": "Corolla",
+        "year": "1995",
+        "carType": "old",
+        "image": ["/pictures/image.png", "/pictures/toyotanew.png", "/pictures/image.png"],
+        "usageDuration": {
+          "years": 25,
+          "months": 6
+        },
+        "mileage": 180000,
+        "price": 3000
+      },
+      {
+        "id": 2,
+        "make": "Honda",
+        "model": "Civic",
+        "year": "2000",
+        "carType": "old",
+       "image": ["/pictures/image.png", "/pictures/toyotanew.png", "/pictures/image.png"],
+        "usageDuration": {
+          "years": 23,
+          "months": 3
+        },
+        "mileage": 150000,
+        "price": 4000
+      },
+      {
+        "id": 3,
+        "make": "Tesla",
+        "model": "Model 3",
+        "year": "2022",
+        "carType": "new",
+        "image": ["/pictures/image.png", "/pictures/toyotanew.png", "/pictures/image.png"],
+        "mileage": 2000,
+        "price": 45000
+      },
+      {
+        "id": 4,
+        "make": "Audi",
+        "model": "A6",
+        "year": "2023",
+        "carType": "new",
+        "image": ["/pictures/image.png", "/pictures/toyotanew.png", "/pictures/image.png"],
+        "mileage": 500,
+        "price": 60000
+      }
+    ]
+  
 }

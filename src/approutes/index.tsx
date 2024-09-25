@@ -4,6 +4,7 @@ import RegisterPage from "../pages/register";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AuthRequired from "./auth";
 import Home from "@/pages/home";
+import Cars from "@/pages/car";
 
 const AppRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const AppRoutes = () => {
         <Route element={<AuthRequired />}>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/cars" element={<Cars />} />
           </Route>
         </Route>
       </Routes>
