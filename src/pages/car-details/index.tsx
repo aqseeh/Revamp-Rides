@@ -6,6 +6,7 @@ import { FaCar, FaTachometerAlt, FaGasPump } from "react-icons/fa";
 import { MdCalendarToday } from "react-icons/md";
 import CarDetailsTable from "./table"; // Import the table component
 import PurchaseForm from "@/components/purchase-form"; // Import the purchase form
+import Modal from "../purchase-model"; // Import the modal component
 
 // Define the type for car details
 interface CarDetails {
@@ -60,19 +61,19 @@ const CarDetails = () => {
   }
 
   return (
-    <div className="flex flex-col m-20 space-y-10 mb-5">
+    <div className="flex flex-col m-20 space-y-10 mb-5 ">
       <div className="flex space-x-10">
         {/* Car Image */}
-        <div className="w-2/3 h-80 overflow-hidden shadow-lg">
+        <div className="w-2/3 h-96 overflow-hidden shadow-lg bg-black">
           <img
-            className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
+            className="w-full h-full object-contain transition-transform duration-300 transform hover:scale-105"
             src={carDetail.image}
             alt={`${carDetail.make} ${carDetail.model}`}
           />
         </div>
 
         {/* Car Details */}
-        <div className="flex flex-col justify-start border border-gray-500 p-5 shadow-md w-96 h-80 bg-white">
+        <div className="flex flex-col justify-start border border-gray-500 p-5 shadow-md w-96 h-96 bg-white">
           <div className="p-3 rounded-md">
             <h1 className="text-3xl font-bold mb-2 text-gray-800">
               {carDetail.make} {carDetail.model}
@@ -125,10 +126,14 @@ const CarDetails = () => {
       {/* Conditional Rendering for Table */}
       {showCardDetails && <CarDetailsTable car={carDetail} />}
 
-      {/* Conditional Rendering for Purchase Form */}
-      {showPurchaseForm && (
-        <PurchaseForm car={carDetail} onClose={togglePurchaseForm} />
-      )}
+      {/* Modal for Purchase Form */}
+      <Modal isOpen={showPurchaseForm} onClose={togglePurchaseForm}>
+        <PurchaseForm
+          car={carDetail}
+          carType="new"
+          onClose={togglePurchaseForm}
+        />
+      </Modal>
     </div>
   );
 };
