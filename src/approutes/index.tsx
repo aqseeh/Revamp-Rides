@@ -7,7 +7,8 @@ import Home from "@/pages/home";
 import Cars from "@/pages/car";
 import AboutUs from "@/pages/about-us";
 import ContactUs from "@/pages/contact";
-
+import UsedCar from "@/pages/car/used-cars";
+import NewCars from "@/pages/car/newcars";
 const AppRoutes = () => {
   return (
     <BrowserRouter>
@@ -18,6 +19,8 @@ const AppRoutes = () => {
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/cars" element={<Cars />} />
+            <Route path="/cars/new" element={<NewCars />} />
+            <Route path="/cars/used" element={<UsedCar />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact-us" element={<ContactUs />} />
           </Route>

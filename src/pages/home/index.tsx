@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Cards from "@/components/ui/cards";
+import Cards from "@/components/cards";
 
 const Home: React.FC = () => {
   const settings = {

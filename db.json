@@ -11,57 +11,97 @@
       "username": "kainat",
       "email": "kainat@gmail.com",
       "password": "$2a$10$vKOgvaEkzmATptzKe479oe8xHwhsSEnNGbboK9rG54ECFNubOG7he"
+    },
+    {
+      "id": "d929",
+      "username": "Kainat Bibi",
+      "email": "k@gmail.com",
+      "password": "$2a$10$fEM2dQUhdBtsyLELnXA0p.D.g3DoMC8BEAwIiutdacLvH66VBvVgK"
     }
   ],
-    "cars": [
+    "newcars": [
       {
         "id": 1,
-        "make": "Toyota",
-        "model": "Corolla",
-        "year": "1995",
-        "carType": "old",
-        "image": ["/pictures/image.png", "/pictures/toyotanew.png", "/pictures/image.png"],
-        "usageDuration": {
-          "years": 25,
-          "months": 6
-        },
-        "mileage": 180000,
-        "price": 3000
+      
+        "model": "Audi A4",
+        "year": 2023,
+        "price": "PKR 4,900,000",
+        "location": "DHA Defence",
+        "image": "/pictures/audi1.png"
       },
       {
         "id": 2,
-        "make": "Honda",
-        "model": "Civic",
-        "year": "2000",
-        "carType": "old",
-       "image": ["/pictures/image.png", "/pictures/toyotanew.png", "/pictures/image.png"],
-        "usageDuration": {
-          "years": 23,
-          "months": 3
-        },
-        "mileage": 150000,
-        "price": 4000
+       
+        "model": "Audi Q3",
+        "year": 2022,
+        "price": "PKR 6,500,000",
+        "location": "Gulberg",
+        "image": "/pictures/audi2.png"
       },
       {
         "id": 3,
-        "make": "Tesla",
-        "model": "Model 3",
-        "year": "2022",
-        "carType": "new",
-        "image": ["/pictures/image.png", "/pictures/toyotanew.png", "/pictures/image.png"],
-        "mileage": 2000,
-        "price": 45000
+     
+        "model": " HondaCivic Sedan",
+        "year": 2025,
+        "price": "PKR 9,500,000",
+        "location": "Lahore",
+        "image": "/pictures/civic.png"
       },
       {
         "id": 4,
-        "make": "Audi",
-        "model": "A6",
-        "year": "2023",
-        "carType": "new",
-        "image": ["/pictures/image.png", "/pictures/toyotanew.png", "/pictures/image.png"],
-        "mileage": 500,
-        "price": 60000
+        
+        "model": "Huracan Spyder",
+        "year": 2024,
+        "price": "PKR 6,500,000",
+        "location": "Gulberg",
+        "image": "/pictures/lamborgini3.png"
+      },
+      {
+        "id": 5,
+       
+        "model": "Ferrari SF90 Stradale",
+        "year": 2022,
+        "price": "PKR 6,500,000",
+        "location": "Gulberg",
+        "image": "/pictures/farari1.png"
       }
+      , {
+        "id": 6,
+       
+        "model": "Lamborghini Huracan EVO",
+        "year": 2021,
+        "price": "PKR 6,500,000",
+        "location": "Gulberg",
+        "image": "/pictures/lamborgini2.png"
+      },
+      {
+        "id": 7,
+       
+        "model": "Civic Sedan Hybrid",
+        "year": 2022,
+        "price": "PKR 6,500,000",
+        "location": "Gulberg",
+        "image": "/pictures/civic3.png"
+      },
+      {
+        "id": 8,
+       
+        "model": "landcruiser",
+        "year": 2022,
+        "price": "PKR 6,500,000",
+        "location": "Gulberg",
+        "image": "/pictures/landcruiser1.png"
+      }
+      , {
+        "id":9,
+        "model": "Lamborghini Revuelto",
+        "year": 2022,
+        "price": "PKR 4,500,000",
+        "location": "Gulberg",
+        "image": "/pictures/lamborgini1.png"
+      }
+
+
     ]
   
 }
