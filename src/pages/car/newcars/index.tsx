@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { MapPin, DollarSign } from "lucide-react";
+import { MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Define the type for car details
 interface CarDetails {
@@ -51,23 +52,29 @@ const NewCars = () => {
           </div>
 
           {/* Car Details */}
-          <div className="px-6 py-4">
+          <div className="px-3 py-4">
             <div className="font-bold text-xl mb-2">
               {car.make} {car.model} ({car.year})
             </div>
             <div className="flex items-center text-gray-700 text-base mb-1">
-              <DollarSign className="w-5 h-5 mr-2" /> {/* Price icon */}
+              {/* {<Banknote className="h-6 w-7" />} */}
+              {/* Price icon */}
               {car.price}
             </div>
 
             <div className="flex items-center justify-between text-gray-700 text-base w-full">
               <div className="flex items-center">
-                <MapPin className="w-5 h-5 mr-2" /> {/* Location icon */}
+                <MapPin className="w-5 h-5" /> {/* Location icon */}
                 {car.location}
               </div>
-              <button className="border border-black bg-black text-white px-4 py-2">
-                Purchase
-              </button>
+              <Link
+                to={`/cars/${car.id}/${car.make}-${car.model
+                  .replace(/\s+/g, "-")
+                  .toLowerCase()}`}
+                className="border border-black bg-black text-white px-4 py-2"
+              >
+                More Details
+              </Link>
             </div>
           </div>
         </div>

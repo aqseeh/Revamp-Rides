@@ -21,87 +21,151 @@
   ],
     "newcars": [
       {
-        "id": 1,
-      
-        "model": "Audi A4",
+        "id": "1",
+        "make": "Audi",
+        "model": "A4",
         "year": 2023,
-        "price": "PKR 4,900,000",
-        "location": "DHA Defence",
-        "image": "/pictures/audi1.png"
+        "price": "PKR 4,700,000",
+        "location": "Johar Town",
+        "image": "/pictures/audi1.png",
+        "kilometers": 15000,
+        "fuelType": "Petrol",
+        "transmission": "Automatic (CVT)",
+        "bodyType": "Sedan",
+        "color": "White",
+        "engineCapacity": 1200,
+        "registeredIn": "2023"
       },
       {
-        "id": 2,
-       
-        "model": "Audi Q3",
+        "id": "2",
+        "make": "Audi",
+        "model": "Q3",
         "year": 2022,
-        "price": "PKR 6,500,000",
-        "location": "Gulberg",
-        "image": "/pictures/audi2.png"
+        "price": "PKR 6,200,000",
+        "location": "Model Town",
+        "image": "/pictures/audi2.png",
+        "kilometers": 23000,
+        "fuelType": "Petrol",
+        "transmission": "Automatic",
+        "bodyType": "SUV",
+        "color": "Black",
+        "engineCapacity": 2000,
+        "registeredIn": "2022"
       },
       {
-        "id": 3,
-     
-        "model": " HondaCivic Sedan",
+        "id": "3",
+        "make": "Honda",
+        "model": "Civic Sedan",
         "year": 2025,
-        "price": "PKR 9,500,000",
-        "location": "Lahore",
-        "image": "/pictures/civic.png"
+        "price": "PKR 9,200,000",
+        "location": "DHA Lahore",
+        "image": "/pictures/civic.png",
+        "kilometers": 5000,
+        "fuelType": "Hybrid",
+        "transmission": "Automatic (CVT)",
+        "bodyType": "Sedan",
+        "color": "Blue",
+        "engineCapacity": 1500,
+        "registeredIn": "2025"
       },
       {
-        "id": 4,
-        
+        "id": "4",
+        "make": "Lamborghini",
         "model": "Huracan Spyder",
         "year": 2024,
-        "price": "PKR 6,500,000",
+        "price": "PKR 8,000,000",
         "location": "Gulberg",
-        "image": "/pictures/lamborgini3.png"
+        "image": "/pictures/lamborgini3.png",
+        "kilometers": 11000,
+        "fuelType": "Petrol",
+        "transmission": "Automatic",
+        "bodyType": "Convertible",
+        "color": "Red",
+        "engineCapacity": 5200,
+        "registeredIn": "2024"
       },
       {
-        "id": 5,
-       
-        "model": "Ferrari SF90 Stradale",
+        "id": "5",
+        "make": "Ferrari",
+        "model": "SF90 Stradale",
         "year": 2022,
-        "price": "PKR 6,500,000",
-        "location": "Gulberg",
-        "image": "/pictures/farari1.png"
-      }
-      , {
-        "id": 6,
-       
-        "model": "Lamborghini Huracan EVO",
-        "year": 2021,
-        "price": "PKR 6,500,000",
-        "location": "Gulberg",
-        "image": "/pictures/lamborgini2.png"
+        "price": "PKR 10,000,000",
+        "location": "Bahria Town",
+        "image": "/pictures/farari1.png",
+        "kilometers": 9000,
+        "fuelType": "Petrol",
+        "transmission": "Automatic",
+        "bodyType": "Coupe",
+        "color": "Yellow",
+        "engineCapacity": 3900,
+        "registeredIn": "2022"
       },
       {
-        "id": 7,
-       
+        "id": "6",
+        "make": "Lamborghini",
+        "model": "Huracan EVO",
+        "year": 2021,
+        "price": "PKR 8,500,000",
+        "location": "Model Town",
+        "image": "/pictures/lamborgini2.png",
+        "kilometers": 13000,
+        "fuelType": "Petrol",
+        "transmission": "Automatic",
+        "bodyType": "Convertible",
+        "color": "Green",
+        "engineCapacity": 5200,
+        "registeredIn": "2021"
+      },
+      {
+        "id": "7",
+        "make": "Honda",
         "model": "Civic Sedan Hybrid",
         "year": 2022,
-        "price": "PKR 6,500,000",
-        "location": "Gulberg",
-        "image": "/pictures/civic3.png"
+        "price": "PKR 7,000,000",
+        "location": "Cantt",
+        "image": "/pictures/civic3.png",
+        "kilometers": 18000,
+        "fuelType": "Hybrid",
+        "transmission": "Automatic (CVT)",
+        "bodyType": "Sedan",
+        "color": "Silver",
+        "engineCapacity": 1600,
+        "registeredIn": "2022"
       },
       {
-        "id": 8,
-       
-        "model": "landcruiser",
+        "id": "8",
+        "make": "Lamborghini",
+        "model": "Revuelto",
         "year": 2022,
-        "price": "PKR 6,500,000",
-        "location": "Gulberg",
-        "image": "/pictures/landcruiser1.png"
-      }
-      , {
-        "id":9,
-        "model": "Lamborghini Revuelto",
+        "price": "PKR 9,200,000",
+        "location": "DHA Phase 5",
+        "image": "/pictures/lamborgini1.png",
+        "kilometers": 2000,
+        "fuelType": "Petrol",
+        "transmission": "Automatic",
+        "bodyType": "Coupe",
+        "color": "Orange",
+        "engineCapacity": 6500,
+        "registeredIn": "2022"
+      },
+      {
+        "id": "9",
+        "make": "Toyota",
+        "model": "Land Cruiser",
         "year": 2022,
-        "price": "PKR 4,500,000",
-        "location": "Gulberg",
-        "image": "/pictures/lamborgini1.png"
+        "price": "PKR 6,700,000",
+        "location": "Faisal Town",
+        "image": "/pictures/landcruiser1.png",
+        "kilometers": 25000,
+        "fuelType": "Diesel",
+        "transmission": "Automatic",
+        "bodyType": "SUV",
+        "color": "Black",
+        "engineCapacity": 4500,
+        "registeredIn": "2022"
       }
-
-
     ]
+  
+  
   
 }
