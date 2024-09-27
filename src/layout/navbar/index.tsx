@@ -19,10 +19,36 @@ const NavBar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const isAuthenticated = useAuth();
 
+  // Explicitly define the type of dropdownRef as HTMLDivElement | null
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  // Function to toggle dropdown menu
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
   // Function to handle link click and close dropdown
   const handleLinkClick = () => {
     setIsDropdownOpen(false);
   };
+
+  // Close dropdown when clicking outside of it
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current && // Check if ref is not null
+      !dropdownRef.current.contains(event.target as Node) // Cast event.target as Node
+    ) {
+      setIsDropdownOpen(false);
+    }
+  };
+
+  // Adding event listener on component mount
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="container mx-auto fixed top-0 z-50 flex justify-between items-center">

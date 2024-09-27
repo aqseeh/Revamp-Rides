@@ -36,7 +36,6 @@ const NewCars = () => {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 m-10 mt-20">
-      {/* Reduced gap */}
       {carDetails.map((car) => (
         <div
           key={car.id}

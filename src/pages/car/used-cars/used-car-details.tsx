@@ -32,7 +32,7 @@ interface CarDetails {
 const Used_Car_Details = () => {
   const { id } = useParams<{ id: string }>();
   const [carDetail, setCarDetail] = useState<CarDetails | null>(null);
-  const [showCardDetails, setShowCardDetails] = useState(false); // For showing/hiding table
+  const [showCarDetails, setShowCardDetails] = useState(false); // For showing/hiding table
   const [showPurchaseForm, setShowPurchaseForm] = useState(false); // For showing/hiding purchase form
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const Used_Car_Details = () => {
   }, [id]);
 
   const toggleCardDetails = () => {
-    setShowCardDetails(!showCardDetails);
+    setShowCardDetails(!showCarDetails);
   };
 
   const togglePurchaseForm = () => {
@@ -109,13 +109,13 @@ const Used_Car_Details = () => {
         </div>
       </div>
 
-      {/* Card Details Button */}
+      {/* Car Details Button */}
       <div>
         <button
           onClick={toggleCardDetails}
           className="px-4 py-2 bg-black text-white shadow hover:bg-gray-700 mr-2"
         >
-          {showCardDetails ? "Hide Card Details" : "Show Card Details"}
+          {showCarDetails ? "Hide Car Details" : "Show Car Details"}
         </button>
         <button
           onClick={togglePurchaseForm}
@@ -126,7 +126,7 @@ const Used_Car_Details = () => {
       </div>
 
       {/* Conditional Rendering for Table */}
-      {showCardDetails && <CarDetailsTable car={carDetail} />}
+      {showCarDetails && <CarDetailsTable car={carDetail} />}
 
       {/* Modal for Purchase Form */}
       <Modal isOpen={showPurchaseForm} onClose={togglePurchaseForm}>
