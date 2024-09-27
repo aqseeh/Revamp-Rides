@@ -17,6 +17,36 @@
       "username": "Kainat Bibi",
       "email": "k@gmail.com",
       "password": "$2a$10$fEM2dQUhdBtsyLELnXA0p.D.g3DoMC8BEAwIiutdacLvH66VBvVgK"
+    },
+    {
+      "id": "5a89",
+      "username": "kainat",
+      "email": "k@gmail.com",
+      "password": "$2a$10$aQdMDD5Kj92PvHMDZ1a3XOohb0WRCwcKOGgq0ifJeJITwNVRSWOri"
+    },
+    {
+      "id": "0d25",
+      "username": "zanab",
+      "email": "zanab@gmail.com",
+      "password": "$2a$10$ID2oDT6Q8YYC7Gk2JojvE.3w74Bgbk3xl6QE2e5UsdYHZNWAd07OG"
+    },
+    {
+      "id": "3873",
+      "username": "aqsa",
+      "email": "kainat@gmail.com",
+      "password": "$2a$10$AKGiH61aVt/PZUJzowUuEeurL.g2CeGVpBTyVDISRGz6d9ryM5AQO"
+    },
+    {
+      "id": "caf8",
+      "username": "aqsa",
+      "email": "aqsa@gmail.com",
+      "password": "$2a$10$lW9o4Jy5mklAlZHYj36EGuO9E0VWqEJtsAL5BmJtP12t06MV3XC3a"
+    },
+    {
+      "id": "d125",
+      "username": "mirha",
+      "email": "mirha@gmail.com",
+      "password": "$2a$10$.LLzl1lYdIMJbPwhsdr/vucB2D7HrgtwwKUPfQb1n1H7GXf8imHEa"
     }
   ],
   "newcars": [

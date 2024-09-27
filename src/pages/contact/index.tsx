@@ -1,9 +1,9 @@
 const ContactUs: React.FC = () => {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 ">
       {/* Contact Section */}
-      <section className="container mx-auto mt-12 text-center">
-        <h2 className="text-4xl font-bold text-red-500 mb-4">Contact Us</h2>
+      <section className="container mx-auto mt-20 text-center">
+        <h2 className="text-4xl font-bold text-red-500 mb-4 ">Contact Us</h2>
         <p className="text-gray-500 max-w-lg mx-auto">
           Revamp Rides offers an unparalleled experience in buying and selling
           cars, providing a vast selection of quality vehicles and exceptional
@@ -13,7 +13,7 @@ const ContactUs: React.FC = () => {
       </section>
 
       {/* Get In Touch and Form Section */}
-      <section className="bg-gray-100 py-12">
+      <section className="bg-gray-100 py-12  px-8">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Get In Touch */}
           <div className="space-y-6 text-left">
@@ -27,7 +27,7 @@ const ContactUs: React.FC = () => {
             <div className="space-y-4">
               <div className="flex items-center">
                 <span className="text-orange-500 mr-4">📍</span>
-                <p>London Eye, London, UK</p>
+                <p> Islamabad,Pakistan</p>
               </div>
               <div className="flex items-center">
                 <span className="text-orange-500 mr-4">📞</span>
@@ -80,20 +80,6 @@ const ContactUs: React.FC = () => {
               </button>
             </form>
           </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="container mx-auto mt-8">
-        <div className="w-full h-64">
-          {/* You can integrate Google Maps API or an iframe here */}
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195054.4475735371!2d-0.3817836808591758!3d51.52855824124748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761cbf345da3b5%3A0x2b2c30504f4b1087!2sLondon+Eye!5e0!3m2!1sen!2suk!4v1632437413130!5m2!1sen!2suk"
-            className="w-full h-full"
-            allowFullScreen
-            loading="lazy"
-            title="Google Maps"
-          ></iframe>
         </div>
       </section>
 
