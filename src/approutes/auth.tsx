@@ -6,6 +6,7 @@ const AuthRequired = () => {
 
   if (!token) {
     return <Navigate to="/auth/login" state={{ from: location }} replace />;
+
   }
   return <Outlet />;
 };
