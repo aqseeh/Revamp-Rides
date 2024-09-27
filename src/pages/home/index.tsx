@@ -2,6 +2,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Cards from "@/components/cards";
+import NewCars from "../car/newcars";
+import UsedCars from "../car/used-cars";
 
 const Home: React.FC = () => {
   const settings = {
@@ -58,6 +60,15 @@ const Home: React.FC = () => {
       <section>
         <Cards />
       </section>
+      <section>
+        <NewCars />
+      </section>
+      <section>
+        <UsedCars />
+      </section>
+      {/* <section>
+        <Services/>
+      </section> */}
     </div>
   );
 };

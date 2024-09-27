@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const useAuth = () => {
@@ -71,9 +71,9 @@ const NavBar = () => {
               Services
             </Link>
             {/* Dropdown for Cars */}
-            <div className="relative">
+            <div className="relative" ref={dropdownRef}>
               <button
-                onClick={() => setIsDropdownOpen((prev) => !prev)}
+                onClick={toggleDropdown}
                 className="text-white flex items-center hover:text-yellow-500 focus:outline-none"
               >
                 Cars

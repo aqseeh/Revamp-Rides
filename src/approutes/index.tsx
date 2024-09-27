@@ -12,12 +12,14 @@ import NewCars from "@/pages/car/newcars";
 import CarDetails from "@/pages/car-details";
 import Used_Car_Details from "@/pages/car/used-cars/used-car-details";
 import SignOut from "@/pages/signout";
+import Footer from "@/pages/footer";
 const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/auth/login" element={<LoginPage />} />
         <Route path="/auth/register" element={<RegisterPage />} />
+
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/cars" element={<Cars />} />
