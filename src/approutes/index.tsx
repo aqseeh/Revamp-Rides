@@ -6,6 +6,9 @@ import AuthRequired from "./auth";
 import Home from "@/pages/home";
 import AboutUs from "@/pages/about-us";
 import ContactUs from "@/pages/contact";
+import Services from "@/pages/sevices";
+import ServiceGet from "@/pages/sevices/serviceget";
+import Form from "@/pages/form";
 
 const AppRoutes = () => {
   return (
@@ -18,7 +21,9 @@ const AppRoutes = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact-us" element={<ContactUs />} />
-          </Route>
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:id" element={<ServiceGet />} />
+            <Route path="/form" element={<Form />} />          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
