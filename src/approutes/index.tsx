@@ -2,7 +2,6 @@ import Layout from "../layout";
 import LoginPage from "../pages/login";
 import RegisterPage from "../pages/register";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AuthRequired from "./auth";
 import Home from "@/pages/home";
 import Cars from "@/pages/car";
 import AboutUs from "@/pages/about-us";
@@ -12,7 +11,7 @@ import NewCars from "@/pages/car/newcars";
 import CarDetails from "@/pages/car-details";
 import Used_Car_Details from "@/pages/car/used-cars/used-car-details";
 import SignOut from "@/pages/signout";
-import Footer from "@/pages/footer";
+
 const AppRoutes = () => {
   return (
     <BrowserRouter>
