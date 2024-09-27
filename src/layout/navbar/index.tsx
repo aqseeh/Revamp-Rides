@@ -3,7 +3,9 @@ import { useState, useRef, useEffect } from "react";
 
 const NavBar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null); // Reference for the dropdown menu
+
+  // Explicitly define the type of dropdownRef as HTMLDivElement | null
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   // Function to toggle dropdown menu
   const toggleDropdown = () => {
@@ -16,8 +18,11 @@ const NavBar = () => {
   };
 
   // Close dropdown when clicking outside of it
-  const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current && // Check if ref is not null
+      !dropdownRef.current.contains(event.target as Node) // Cast event.target as Node
+    ) {
       setIsDropdownOpen(false);
     }
   };
