@@ -12,6 +12,10 @@ import NewCars from "@/pages/car/newcars";
 import CarDetails from "@/pages/car-details";
 import Used_Car_Details from "@/pages/car/used-cars/used-car-details";
 import SignOut from "@/pages/signout";
+import Services from "@/pages/sevices";
+import ServiceGet from "@/pages/sevices/serviceget";
+import Form from "@/pages/form";
+
 const AppRoutes = () => {
   return (
     <BrowserRouter>
@@ -28,6 +32,11 @@ const AppRoutes = () => {
           <Route path="/cars/used" element={<UsedCar />} />
           <Route path="/car/:id/:makeModel" element={<Used_Car_Details />} />
           <Route path="/signout" element={<SignOut />} />
+          <Route element={<AuthRequired />}>
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:id" element={<ServiceGet />} />
+            <Route path="/form" element={<Form />} />{" "}
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
