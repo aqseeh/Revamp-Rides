@@ -48,15 +48,19 @@ const UserAuthForm = () => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     try {
-      const hashedPassword = await bcrypt.hash(
-        values.password,
-        Number(import.meta.env.VITE_APP_SALT_ROUND)
-      );
+      // const hashedPassword = await bcrypt.hash(
+      //   values.password,
+      //   Number(import.meta.env.VITE_APP_SALT_ROUND)
+      // );
 
-      await axios.post("http://localhost:4000/users", {
-        ...values,
-        password: hashedPassword,
-      });
+      // await axios.post("http://127.0.0.1:8000/users/save-user/", {
+      //   ...values,
+      //   password: hashedPassword,
+      // });
+      await axios.post(
+        "http://127.0.0.1:8000/users/registration-user/",
+        values
+      );
       navigate("/auth/login");
     } catch (error: any) {
       console.log(error.message);

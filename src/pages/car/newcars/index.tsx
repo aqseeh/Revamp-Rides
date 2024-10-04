@@ -20,8 +20,28 @@ const NewCars = () => {
   useEffect(() => {
     const fetchCarDetails = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/newcars");
-        setCarDetails(response.data);
+        // const response = await axios.get("http://localhost:4000/newcars");
+        // const values = {
+        //   id: "1",
+        //   make: "Land Cruiser ",
+        //   model: "A4",
+        //   year: 2020,
+        //   price: "PKR 3,200,000",
+        //   location: "Johar Town",
+        //   image: "/pictures/usedcar1.png",
+        //   kilometers: 50000,
+        //   fuelType: "Petrol",
+        //   transmission: "Automatic (CVT)",
+        //   bodyType: "Matellic",
+        //   color: "White",
+        //   engineCapacity: 1200,
+        //   registeredIn: "2020",
+        // };
+        const { data } = await axios.get(
+          "http://127.0.0.1:8000/cars/save-new-car/"
+        );
+        console.log("🚀 ~ fetchCarDetails ~ data:", data);
+        setCarDetails(data);
       } catch (error) {
         console.error("Error fetching car details:", error);
       }
@@ -35,49 +55,58 @@ const NewCars = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 m-10 mt-20">
-      {carDetails.map((car) => (
-        <div
-          key={car.id}
-          className="w-72 rounded overflow-hidden shadow-md border cursor-pointer transition duration-300"
-        >
-          {/* Car Image */}
-          <div className="w-full h-72">
-            <img
-              className="w-full h-full object-cover object-center block"
-              src={car.image}
-              alt={`${car.make} ${car.model}`}
-            />
-          </div>
+    <div className="mt-20">
+      <h1 className=" flex items-center text-red-500 font-bold text-3xl justify-center">
+        New Cars
+      </h1>
+      <p className="flex items-center text-black  text-2xl justify-center">
+        Explore unlimited new cars at one place
+      </p>
 
-          {/* Car Details */}
-          <div className="px-3 py-4">
-            <div className="font-bold text-xl mb-2">
-              {car.make} {car.model} ({car.year})
-            </div>
-            <div className="flex items-center text-gray-700 text-base mb-1">
-              {/* {<Banknote className="h-6 w-7" />} */}
-              {/* Price icon */}
-              {car.price}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 m-10 mt-5">
+        {carDetails.map((car) => (
+          <div
+            key={car.id}
+            className="w-72 rounded overflow-hidden shadow-md border cursor-pointer transition duration-300"
+          >
+            {/* Car Image */}
+            <div className="w-full h-72">
+              <img
+                className="w-full h-full object-cover object-center block"
+                src={car.image}
+                alt={`${car.make} ${car.model}`}
+              />
             </div>
 
-            <div className="flex items-center justify-between text-gray-700 text-base w-full">
-              <div className="flex items-center">
-                <MapPin className="w-5 h-5" /> {/* Location icon */}
-                {car.location}
+            {/* Car Details */}
+            <div className="px-3 py-4">
+              <div className="font-bold text-xl mb-2">
+                {car.make} {car.model} ({car.year})
               </div>
-              <Link
-                to={`/cars/${car.id}/${car.make}-${car.model
-                  .replace(/\s+/g, "-")
-                  .toLowerCase()}`}
-                className="border border-black bg-black text-white px-4 py-2"
-              >
-                More Details
-              </Link>
+              <div className="flex items-center text-gray-700 text-base mb-1">
+                {/* {<Banknote className="h-6 w-7" />} */}
+                {/* Price icon */}
+                {car.price}
+              </div>
+
+              <div className="flex items-center justify-between text-gray-700 text-base w-full">
+                <div className="flex items-center">
+                  <MapPin className="w-5 h-5" /> {/* Location icon */}
+                  {car.location}
+                </div>
+                <Link
+                  to={`/cars/${car.id}/${car.make}-${car.model
+                    .replace(/\s+/g, "-")
+                    .toLowerCase()}`}
+                  className="border border-black bg-black text-white px-4 py-2"
+                >
+                  More Details
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

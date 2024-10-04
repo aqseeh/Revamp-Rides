@@ -44,28 +44,10 @@ const UserAuthForm = () => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     try {
-      const { data } = await axios.get("http://localhost:4000/users");
-
-      const selectedUser: USER = data.find(
-        (user: USER) => user.email === values.email
+      const { data } = await axios.post(
+        "http://127.0.0.1:8000/users/login-user/",
+        values
       );
-      if (selectedUser) {
-        const hashedPassword = await bcrypt.compare(
-          values.password,
-          selectedUser.password
-        );
-        if (hashedPassword) {
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
-          const { password, ...user } = selectedUser;
-          localStorage.setItem("my-token", user.email);
-          navigate("/");
-          toast.success("user login successfully!");
-        } else {
-          toast.error("Password doesn't matched!");
-        }
-      } else {
-        toast.error("Email doesn't exist!");
-      }
     } catch (error: any) {
       console.log(error.message);
       toast.error(error.message);
