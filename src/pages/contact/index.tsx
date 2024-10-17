@@ -1,4 +1,47 @@
+import { useState } from "react";
 const ContactUs: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(
+        `http://127.0.0.1:8000/contactus/save-contact-data/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      // Show success alert
+      alert("Your message successfully send");
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+      alert("There was an error submitting your message. Please try again.");
+    }
+  };
   return (
     <div className="bg-gray-50 ">
       {/* Contact Section */}
@@ -50,24 +93,36 @@ const ContactUs: React.FC = () => {
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">
               Send a Message
             </h3>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <input
                   type="text"
+                  name="name"
                   placeholder="Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
               </div>
               <div className="mb-4">
                 <input
                   type="email"
+                  name="email"
                   placeholder="E-mail address"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
               </div>
               <div className="mb-4">
                 <textarea
+                  name="message"
                   placeholder="Message"
+                  onChange={handleChange}
+                  value={formData.message}
+                  required
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                   rows={5}
                 ></textarea>

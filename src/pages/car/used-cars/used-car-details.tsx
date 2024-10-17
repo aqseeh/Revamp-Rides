@@ -31,6 +31,7 @@ interface CarDetails {
 
 const Used_Car_Details = () => {
   const { id } = useParams<{ id: string }>();
+  const carId = parseInt(id || "", 10);
   const [carDetail, setCarDetail] = useState<CarDetails | null>(null);
   const [showCarDetails, setShowCardDetails] = useState(false); // For showing/hiding table
   const [showPurchaseForm, setShowPurchaseForm] = useState(false); // For showing/hiding purchase form
@@ -39,7 +40,7 @@ const Used_Car_Details = () => {
     const fetchCarDetail = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/usedcars/${id}`
+          `http://127.0.0.1:8000/cars/fetch-specific-used-car/${carId}/`
         );
         setCarDetail(response.data);
       } catch (error) {

@@ -16,7 +16,7 @@ const Services = () => {
       <div className="grid grid-cols-4 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4 mb-10 ">
         {/* Body Repair */}
         <div className="shadow-lg">
-          <Link to="/services/2" className="text-gray-300 hover:text-white">
+          <Link to="/services/1" className="text-gray-300 hover:text-white">
             <img
               alt="Body Repair"
               src="/pictures/bodyrepair.avif"
@@ -32,7 +32,7 @@ const Services = () => {
 
         {/* Accident Damage Insurance */}
         <div className=" shadow-lg">
-          <Link to="/services/3" className="text-gray-300 hover:text-white">
+          <Link to="/services/2" className="text-gray-300 hover:text-white">
             <img
               alt="Accident Damage Insurance"
               src="/pictures/accinsurance.avif"
@@ -48,7 +48,7 @@ const Services = () => {
 
         {/* Book A Service */}
         <div className="shadow-lg">
-          <Link to="/services/4" className="text-gray-300 hover:text-white">
+          <Link to="/services/3" className="text-gray-300 hover:text-white">
             <img
               alt="Book A Service"
               src="/pictures/servicing.avif"
@@ -64,7 +64,7 @@ const Services = () => {
 
         {/* Financing */}
         <div className=" shadow-lg">
-          <Link to="/services/5" className="text-gray-300 hover:text-white">
+          <Link to="/services/4" className="text-gray-300 hover:text-white">
             <img
               alt="Financing"
               src="/pictures/financing.avif"

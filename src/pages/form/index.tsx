@@ -7,7 +7,6 @@ function Form() {
     name: "",
     email: "",
     address: "",
-    location: "",
     tel: "",
     postcode: "",
     ServeYouWant: "",
@@ -17,9 +16,10 @@ function Form() {
     event.preventDefault();
 
     try {
+      console.log("send data ", formData);
       // Send POST request to save data in db.json
       const response = await axios.post(
-        "http://localhost:4000/submissions",
+        "http://127.0.0.1:8000/services/submission-form/",
         formData
       );
       console.log("Data saved:", response.data);
@@ -29,7 +29,6 @@ function Form() {
         name: "",
         email: "",
         address: "",
-        location: "",
         tel: "",
         postcode: "",
         ServeYouWant: "",

@@ -13,10 +13,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import axios from "axios";
-import * as bcrypt from "bcryptjs";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { USER } from "@/user/user";
 const formSchema = z.object({
   email: z.string().email().min(1, {
     message: "Email is required",
@@ -48,9 +46,24 @@ const UserAuthForm = () => {
         "http://127.0.0.1:8000/users/login-user/",
         values
       );
+      if (data.message === "Login successful") {
+        localStorage.setItem("my-token", values.email);
+        toast.success("Login successful!");
+        navigate("/"); // Navigate to homepage or dashboard
+      }
     } catch (error: any) {
-      console.log(error.message);
-      toast.error(error.message);
+      if (error.response && error.response.status === 400) {
+        // Custom message for 400 Bad Request
+        toast.error("Invalid email or password. Please try again.");
+      } else if (error.response && error.response.status === 500) {
+        // Server error handling
+        toast.error("Something went wrong on our end. Please try again later.");
+      } else {
+        // General error handling
+        toast.error(
+          "An error occurred. Please check your connection and try again."
+        );
+      }
     }
   }
   return (

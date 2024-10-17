@@ -32,11 +32,9 @@ const AppRoutes = () => {
           <Route path="/cars/used" element={<UsedCar />} />
           <Route path="/car/:id/:makeModel" element={<Used_Car_Details />} />
           <Route path="/signout" element={<SignOut />} />
-          <Route element={<AuthRequired />}>
-            <Route path="/services" element={<Services />} />
-            <Route path="/services/:id" element={<ServiceGet />} />
-            <Route path="/form" element={<Form />} />{" "}
-          </Route>
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:id" element={<ServiceGet />} />
+          <Route path="/form" element={<Form />} />
         </Route>
       </Routes>
     </BrowserRouter>

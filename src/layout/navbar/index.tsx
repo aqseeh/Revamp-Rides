@@ -58,7 +58,7 @@ const NavBar = () => {
           <div className="flex space-x-6 items-center font-medium h-full justify-end">
             <Link
               to="/"
-              className="text-white hover:text-slate-600"
+              className="text-white hover:text-yellow-500"
               onClick={handleLinkClick}
             >
               Home
@@ -70,7 +70,6 @@ const NavBar = () => {
             >
               Services
             </Link>
-            {/* Dropdown for Cars */}
             <div className="relative">
               <button
                 onClick={() => setIsDropdownOpen((prev) => !prev)}
@@ -116,7 +115,7 @@ const NavBar = () => {
             </Link>
             {isAuthenticated ? (
               <Avatar>
-                <AvatarImage src="/pictures/audi1.png" />
+                <AvatarImage src="/pictures/avatar1.png" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
             ) : (

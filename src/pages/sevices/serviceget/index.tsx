@@ -8,12 +8,12 @@ interface Service {
   id: number;
   title: string;
   description: string;
-  image: string;
 }
 
 const ServiceGet = () => {
   const { id } = useParams<{ id: string }>(); // Get service id from URL params
-  console.log("Service ID:", id);
+  const serviceId = parseInt(id || "", 10);
+  console.log("type of", typeof serviceId);
 
   const [service, setService] = useState<Service | null>(null); // State for service details
   const [loading, setLoading] = useState(true); // State for loading
@@ -21,10 +21,13 @@ const ServiceGet = () => {
   const router = useNavigate();
 
   // Fetch service details from the db.json API
-  const fetchServiceDetails = useCallback(async () => {
-    if (!id) return; // Exit if no id is available
+  const fetchServiceDetails = async () => {
+    if (!serviceId) return; // Exit if no id is available
     try {
-      const { data } = await axios.get(`http://localhost:4000/services/${id}`);
+      const { data } = await axios.get(
+        `http://127.0.0.1:8000/services/save-services/${serviceId}/`
+      );
+      console.log("data", data);
       setService(data); // Set service data
     } catch (err) {
       const errorMessage =
@@ -34,12 +37,12 @@ const ServiceGet = () => {
     } finally {
       setLoading(false); // Update loading state
     }
-  }, [id]);
+  };
 
   // Use effect to fetch service details when component mounts
   useEffect(() => {
     fetchServiceDetails();
-  }, [fetchServiceDetails]); // Include fetchServiceDetails in the dependency array
+  }, [id]); // Include fetchServiceDetails in the dependency array
 
   // Render loading state
   if (loading) {
@@ -63,7 +66,9 @@ const ServiceGet = () => {
       <p className="text-lg text-gray-700 text-justify max-w-2xl">
         {service.description}
       </p>
-      <Button className="gap-y-12" onClick={() => router("/services")}>Back</Button>
+      <Button className="gap-y-12" onClick={() => router("/services")}>
+        Back
+      </Button>
     </div>
   );
 };

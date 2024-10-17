@@ -72,13 +72,13 @@ const Avatar = React.forwardRef<
       </AvatarPrimitive.Root>
       {isDropdownOpen && (
         <div className="absolute right-0 mt-2 w-48 bg-black text-white shadow-lg">
-          {userDetails ? (
+          {/* {userDetails ? (
             <div className="px-4 py-2">
               <p className="text-sm">Email: {userDetails.email}</p>
             </div>
           ) : (
             <div className="px-4 py-2">kainat</div>
-          )}
+          )} */}
           <div className="border-t border-gray-700">
             <a href="/orders" className="block px-4 py-2 hover:bg-gray-700">
               Orders

@@ -31,6 +31,7 @@ interface CarDetails {
 
 const CarDetails = () => {
   const { id } = useParams<{ id: string }>();
+  const carId = parseInt(id || "", 10);
   const [carDetail, setCarDetail] = useState<CarDetails | null>(null);
   const [showCardDetails, setShowCardDetails] = useState(false); // For showing/hiding table
   const [showPurchaseForm, setShowPurchaseForm] = useState(false); // For showing/hiding purchase form
@@ -38,7 +39,10 @@ const CarDetails = () => {
   useEffect(() => {
     const fetchCarDetail = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/newcars/${id}`);
+        console.log(carId);
+        const response = await axios.get(
+          `http://127.0.0.1:8000/cars/fetch-specific-car/${carId}/`
+        );
         setCarDetail(response.data);
       } catch (error) {
         console.error("Error fetching car details:", error);
@@ -113,7 +117,7 @@ const CarDetails = () => {
           onClick={toggleCardDetails}
           className="px-4 py-2 bg-black text-white shadow hover:bg-gray-700 mr-2"
         >
-          {showCardDetails ? "Hide Card Details" : "Show Card Details"}
+          {showCardDetails ? "Hide Car Details" : "Show Car Details"}
         </button>
         <button
           onClick={togglePurchaseForm}
@@ -128,11 +132,7 @@ const CarDetails = () => {
 
       {/* Modal for Purchase Form */}
       <Modal isOpen={showPurchaseForm} onClose={togglePurchaseForm}>
-        <PurchaseForm
-          car={carDetail}
-          carType="new"
-          onClose={togglePurchaseForm}
-        />
+        <PurchaseForm car={carDetail} onClose={togglePurchaseForm} />
       </Modal>
     </div>
   );

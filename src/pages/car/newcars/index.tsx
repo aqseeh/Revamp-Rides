@@ -20,23 +20,6 @@ const NewCars = () => {
   useEffect(() => {
     const fetchCarDetails = async () => {
       try {
-        // const response = await axios.get("http://localhost:4000/newcars");
-        // const values = {
-        //   id: "1",
-        //   make: "Land Cruiser ",
-        //   model: "A4",
-        //   year: 2020,
-        //   price: "PKR 3,200,000",
-        //   location: "Johar Town",
-        //   image: "/pictures/usedcar1.png",
-        //   kilometers: 50000,
-        //   fuelType: "Petrol",
-        //   transmission: "Automatic (CVT)",
-        //   bodyType: "Matellic",
-        //   color: "White",
-        //   engineCapacity: 1200,
-        //   registeredIn: "2020",
-        // };
         const { data } = await axios.get(
           "http://127.0.0.1:8000/cars/save-new-car/"
         );
